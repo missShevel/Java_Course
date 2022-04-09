@@ -1,4 +1,7 @@
-package com.kpi;
+package com.kpi.controller;
+
+import com.kpi.model.Train;
+import com.kpi.view.TrainView;
 
 public class TrainController {
 

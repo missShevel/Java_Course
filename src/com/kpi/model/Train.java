@@ -1,4 +1,4 @@
-package com.kpi;
+package com.kpi.model;
 
 public class Train {
 
