@@ -1,9 +1,11 @@
 package com.kpi.view;
 import com.kpi.model.Train;
 
+import java.util.ArrayList;
+
 public class TrainView {
 
-    public final String INPUT_MESSAGE = "Welcome! Please, choose the option: " +
+    public final String INPUT_MESSAGE = "Please, choose the option: " +
             "\n 1 - Print trains with certain type of places" +
             "\n 2 - Print trains going to certain destination and deporting after certain time" +
             "\n 3 - Exit";
@@ -20,10 +22,15 @@ public class TrainView {
         System.out.println(message);
     }
 
-    public void printResultAndMessage(String message, Train [] trains){
+    public void printResultAndMessage(String message, ArrayList<Train> trains){
         System.out.println(message);
+        System.out.format("+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n");
+        System.out.format("|               Train ID                 | Destination |  Time  |    General seats   |   Reserved Seats   |     Coupe Seats    | Sleep Vagon Seats  |\n");
+        System.out.format("+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n");
+
         for(Train t : trains) {
             System.out.println(t);
         }
+        System.out.format("+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n");
     }
 }

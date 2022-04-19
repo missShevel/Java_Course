@@ -1,20 +1,22 @@
 package com.kpi.model;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 
 public class TrainStorage {
 
-    private Train[] trains;
+    private ArrayList<Train> trains;
 
     public TrainStorage(){
         this.trains = generateTrains(20);
     }
 
-    private static Train[] generateTrains(int number){
-        Train [] trains = new Train[number];
+    private static ArrayList<Train> generateTrains(int number){
+        ArrayList<Train> trains = new ArrayList<>();
         for (int i = 0; i < number; i++) {
             Train t = new Train(generateDestination(), UUID.randomUUID().toString(),generateNumber(24), generateNumber(59),generateNumber(80), generateNumber(15), 16, generateNumber(10));
-            trains[i] = t;
+            trains.add(t);
+            System.out.println(t);
         }
         return trains;
     }
@@ -30,7 +32,7 @@ public class TrainStorage {
         return rand.nextInt(maxValue) + 1;
     }
 
-    public Train [] getTrainStorage(){
+    public ArrayList<Train> getTrainStorage(){
         return this.trains;
     }
 

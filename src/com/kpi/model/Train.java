@@ -1,11 +1,11 @@
+
 package com.kpi.model;
 
 public class Train {
 
     private String destination;
     private String IdNumber;
-    private int departureHours;
-    private int departureMinutes;
+    private Time departureTime;
     private int numberOfGeneralSeats;
     private int numberOfReservedSeats;
     private int numberOfCoupeSeats;
@@ -16,8 +16,7 @@ public class Train {
                  int numberOfCoupeSeats, int numberOfSVSeats) {
         this.destination = destination;
         this.IdNumber = idNumber;
-        this.departureHours = departureHours;
-        this.departureMinutes = departureMinutes;
+        this.departureTime = new Time(departureHours, departureMinutes);
         this.numberOfGeneralSeats = numberOfGeneralSeats;
         this.numberOfReservedSeats = numberOfReservedSeats;
         this.numberOfCoupeSeats = numberOfCoupeSeats;
@@ -40,13 +39,13 @@ public class Train {
         IdNumber = idNumber;
     }
 
-    public String getTime(){
-        return this.departureHours + ":" + this.departureMinutes;
+    public Time getTime(){
+        return this.departureTime;
     }
 
     public void setTime(int hours, int minutes){
-        this.departureHours = hours;
-        this.departureMinutes = minutes;
+        this.departureTime.setHours(hours);
+        this.departureTime.setMinutes(minutes);
     }
 
     public int getNumberOfGeneralSeats() {
@@ -84,15 +83,7 @@ public class Train {
 
     @Override
     public String toString() {
-        return "Train{" +
-                "destination='" + destination + '\'' +
-                ", IdNumber='" + IdNumber + '\'' +
-                ", departureHours=" + departureHours +
-                ", departureMinutes=" + departureMinutes +
-                ", numberOfGeneralSeats=" + numberOfGeneralSeats +
-                ", numberOfReservedSeats=" + numberOfReservedSeats +
-                ", numberOfCoupeSeats=" + numberOfCoupeSeats +
-                ", numberOfSVSeats=" + numberOfSVSeats +
-                '}';
+        String printFormat = "| %-38s | %-11s | %-6s | %-18d | %-18d | %-18d | %-18d |";
+        return String.format(printFormat, IdNumber, destination, getTime(), numberOfGeneralSeats, numberOfReservedSeats, numberOfCoupeSeats, numberOfSVSeats);
     }
 }
