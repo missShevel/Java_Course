@@ -4,7 +4,7 @@ public class Time {
     int hours;
     int minutes;
 
-    public Time(int hours, int minutes){
+    public Time(int hours, int minutes) {
         this.hours = hours;
         this.minutes = minutes;
     }
@@ -25,10 +25,10 @@ public class Time {
         this.minutes = minutes;
     }
 
-    public static boolean isGreater(Time earlier, Time later){
-        if( earlier.getHours() > later.getHours()){
+    public static boolean isGreater(Time earlier, Time later) {
+        if (earlier.getHours() > later.getHours()) {
             return false;
-        } else if(earlier.getHours() == later.getHours()){
+        } else if (earlier.getHours() == later.getHours()) {
             return earlier.getMinutes() < later.getMinutes();
         }
         return true;

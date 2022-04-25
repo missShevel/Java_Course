@@ -39,11 +39,11 @@ public class Train {
         IdNumber = idNumber;
     }
 
-    public Time getTime(){
+    public Time getTime() {
         return this.departureTime;
     }
 
-    public void setTime(int hours, int minutes){
+    public void setTime(int hours, int minutes) {
         this.departureTime.setHours(hours);
         this.departureTime.setMinutes(minutes);
     }

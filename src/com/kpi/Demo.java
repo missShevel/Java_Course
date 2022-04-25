@@ -5,7 +5,7 @@ import com.kpi.controller.TrainController;
 public class Demo {
 
     public static void main(String[] args) {
-new TrainController().run();
+        new TrainController().run();
     }
 
 
