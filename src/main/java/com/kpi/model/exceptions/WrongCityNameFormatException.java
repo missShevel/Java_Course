@@ -1,4 +1,4 @@
-package com.kpi.exceptions;
+package com.kpi.model.exceptions;
 
 public class WrongCityNameFormatException extends Exception {
 

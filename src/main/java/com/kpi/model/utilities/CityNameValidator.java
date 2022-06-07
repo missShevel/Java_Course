@@ -1,6 +1,6 @@
-package com.kpi.controller;
+package com.kpi.model.utilities;
 
-import com.kpi.exceptions.WrongCityNameFormatException;
+import com.kpi.model.exceptions.WrongCityNameFormatException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

@@ -1,30 +1,37 @@
 package com.kpi.view;
 
-import com.kpi.controller.CityNameValidator;
-import com.kpi.controller.Time24HoursValidator;
-import com.kpi.exceptions.IncorrectInputException;
-import com.kpi.exceptions.WrongCityNameFormatException;
-import com.kpi.exceptions.WrongTimeFormatException;
-import com.kpi.model.Time;
+import com.kpi.model.utilities.CityNameValidator;
+import com.kpi.model.utilities.Time24HoursValidator;
+import com.kpi.model.exceptions.IncorrectInputException;
+import com.kpi.model.exceptions.WrongCityNameFormatException;
+import com.kpi.model.exceptions.WrongTimeFormatException;
+import com.kpi.model.entities.Time;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputView {
-    private TrainView view;
+    private MainView view;
 
-    public InputView(TrainView view) {
+    public InputView(MainView view) {
         this.view = view;
     }
 
     public int inputIntValueWithScanner() throws IncorrectInputException {
         view.printMessage(view.INPUT_MESSAGE);
         Scanner sc = new Scanner(System.in);
-        int type = sc.nextInt();
-        if (type > 0 && type < 4) {
-            return type;
-        } else {
+        try {
+            int type = sc.nextInt();
+            if (type > 0 && type < 4) {
+                return type;
+            }else {
+                throw new IncorrectInputException();
+            }
+        }
+        catch (InputMismatchException e){
             throw new IncorrectInputException();
         }
+
     }
 
     public String inputCity() throws WrongCityNameFormatException {

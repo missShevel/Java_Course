@@ -1,6 +1,8 @@
-package com.kpi.model;
+package com.kpi.model.entities;
 
-public class Time {
+import java.io.Serializable;
+
+public class Time implements Serializable {
     int hours;
     int minutes;
 
@@ -36,6 +38,14 @@ public class Time {
 
     @Override
     public String toString() {
-        return hours + ":" + minutes;
+        String hour = Integer.toString(hours);
+        String minute = Integer.toString(minutes);
+        if (hours < 10) {
+            hour = "0"+hours;
+        }
+        if(minutes < 10) {
+            minute = "0" + minutes;
+        }
+        return hour + ":" + minute;
     }
 }

@@ -1,6 +1,7 @@
-package com.kpi.model;
+package com.kpi.model.utilities;
 
-import com.kpi.exceptions.EmptyResultException;
+import com.kpi.model.exceptions.EmptyResultException;
+import com.kpi.model.entities.Train;
 
 import java.util.ArrayList;
 

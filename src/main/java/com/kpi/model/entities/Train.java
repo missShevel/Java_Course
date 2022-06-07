@@ -1,7 +1,9 @@
 
-package com.kpi.model;
+package com.kpi.model.entities;
 
-public class Train {
+import java.io.Serializable;
+
+public class Train implements Serializable {
 
     private String destination;
     private String IdNumber;

@@ -1,9 +1,9 @@
-package com.kpi.controller;
+package com.kpi.model.utilities;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.kpi.exceptions.WrongTimeFormatException;
+import com.kpi.model.exceptions.WrongTimeFormatException;
 
 public class Time24HoursValidator {
 
