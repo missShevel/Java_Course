@@ -11,6 +11,12 @@ public class MainView {
             "\n 2 - Print trains going to certain destination and deporting after certain time" +
             "\n 3 - Exit";
 
+    public final String HEADER =
+          "+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+" +
+        "\n|               Train ID                 | Destination |  Time  |    General seats   |   Reserved Seats   |     Coupe Seats    | Sleep Vagon Seats  |" +
+        "\n+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+" +
+        "\n";
+    public final String FOOTER = "+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n";
     public final String ENTER_DESTINATION = "Enter destination name: ";
     public final String ENTER_TIME = "Enter time in format \"HH:MM\": ";
     public final String ENTER_PLACES_TYPE = "Enter places type: ";
@@ -19,19 +25,21 @@ public class MainView {
     public final String EMPTY_RESULT = "No trains found";
     public final String WRONG_INPUT = "Wrong input! Try again";
 
-    public void printMessage(String message) {
+    public static void printMessage(String message) {
         System.out.println(message);
     }
 
-    public void printResultAndMessage(String message, ArrayList<Train> trains) {
-        System.out.println(message);
-        System.out.format("+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n");
-        System.out.format("|               Train ID                 | Destination |  Time  |    General seats   |   Reserved Seats   |     Coupe Seats    | Sleep Vagon Seats  |\n");
-        System.out.format("+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n");
-
+    public String getResult(ArrayList<Train> trains) {
+        StringBuilder stb = new StringBuilder();
+        stb.append(HEADER);
         for (Train t : trains) {
-            System.out.println(t);
+            stb.append(t.toString() + "\n");
         }
-        System.out.format("+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n");
+        stb.append(FOOTER);
+    return stb.toString();
+    }
+    public void printResultAndMessage(String message, ArrayList<Train> result){
+        printMessage(message);
+        printMessage(getResult(result));
     }
 }

@@ -7,11 +7,13 @@ import com.kpi.model.exceptions.WrongCityNameFormatException;
 import com.kpi.model.exceptions.WrongTimeFormatException;
 import com.kpi.model.entities.Time;
 
+import java.io.File;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputView {
     private MainView view;
+
 
     public InputView(MainView view) {
         this.view = view;
@@ -52,6 +54,12 @@ public class InputView {
         int hours = Integer.parseInt(inputTime.substring(0, inputTime.indexOf(":")));
         int minutes = Integer.parseInt(inputTime.substring(inputTime.indexOf(":") + 1));
         return new Time(hours, minutes);
+    }
+    public File inputFileName(){
+        System.out.print( "Type filename: ");
+        Scanner scan = new Scanner(System.in);
+        String fileName = scan.nextLine();
+        return new File(fileName + ".txt");
     }
 }
 

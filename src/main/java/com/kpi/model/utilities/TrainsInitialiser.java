@@ -23,9 +23,8 @@ public class TrainsInitialiser {
         ArrayList<Train> trains = new ArrayList<>();
 
         for (int i = 0; i < number; i++) {
-            Train t = new Train(generateDestination(), UUID.randomUUID().toString(), generateNumber(23), generateNumber(59), generateNumber(80), generateNumber(15), generateNumber(16), generateNumber(10));
+            Train t = new Train(generateDestination(), UUID.randomUUID().toString(), generateNumber(23), generateNumber(59), generateNumber(80)-1, generateNumber(15), generateNumber(16), generateNumber(10));
             trains.add(t);
-            System.out.println(t);
         }
         return trains;
     }
