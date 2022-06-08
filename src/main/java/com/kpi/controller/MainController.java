@@ -4,6 +4,7 @@ import com.kpi.model.Solution;
 import com.kpi.model.entities.Time;
 import com.kpi.model.entities.Train;
 import com.kpi.model.utilities.DataHelper;
+import com.kpi.model.utilities.TrainsTimetable;
 import com.kpi.view.InputView;
 import com.kpi.view.MainView;
 import com.kpi.view.UserSaveView;
@@ -30,33 +31,39 @@ public class MainController {
 
     public void run() {
         int indexOfCommand = 0;
-
-        ArrayList<Train> resultList = solution.getTimetable().getTrainStorage();
+        ArrayList<Train> resultList = new ArrayList<>();
         DataHelper file = new DataHelper();
         while (true) {
-
             try {
                 indexOfCommand = input.inputIntValueWithScanner();
                 if (indexOfCommand == 3) {
+                    resultList = new TrainsTimetable().getTimetable();
                     file.saveData(resultList);
                     logger.info("Application closed successfully");
                     break;
                 } else if (indexOfCommand == 1) {
                     resultList = solution.getBySeatsType();
-                    view.printResultAndMessage(view.RESULT, resultList);
-                    if (UserSaveView.saveMenu()){
-                        file.saveData(view.getResult(resultList), FILE_PATH + input.inputFileName());
-                    };
+                    if(resultList.isEmpty()){
+                        view.printMessage(view.EMPTY_RESULT);
+                    } else {
+                        view.printResultAndMessage(view.RESULT, resultList);
+                        if (UserSaveView.saveMenu()) {
+                            file.saveData(view.getResult(resultList), FILE_PATH + input.inputFileName());
+                        }
+                    }
                 } else if (indexOfCommand == 2) {
                     String destinationPlace = input.inputCity();
                     Time timeAfter = input.inputTime();
                     resultList = solution.getByDeparturePlaceAndAfterTime(destinationPlace, timeAfter);
-                    view.printResultAndMessage(view.RESULT, resultList);
-                    if (UserSaveView.saveMenu()){
-                        file.saveData(view.getResult(resultList), FILE_PATH + input.inputFileName());
-                    };
+                    if (resultList.isEmpty()) {
+                        view.printMessage(view.EMPTY_RESULT);
+                    } else {
+                        view.printResultAndMessage(view.RESULT, resultList);
+                        if (UserSaveView.saveMenu()) {
+                            file.saveData(view.getResult(resultList), FILE_PATH + input.inputFileName());
+                        }
+                    }
                 }
-
             } catch (Exception e) {
                 logger.error(e.getMessage(), e);
                 view.printMessage(e.getMessage());

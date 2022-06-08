@@ -6,24 +6,24 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.UUID;
 
-public class TrainsInitialiser {
+public class TrainsTimetable {
     private ArrayList<Train> trains;
 
-    public TrainsInitialiser() {
-        this.trains = loadTrains();
+    public TrainsTimetable() {
+        this.trains = loadTimetable();
         }
 
-    private static ArrayList<Train> loadTrains() {
+    private static ArrayList<Train> loadTimetable() {
         ArrayList<Train> trains = new DataHelper().loadData();
-        if (trains==null || trains.isEmpty()) trains = generateTrains(20);
+        if (trains==null || trains.isEmpty()) trains = generateTimetable(20);
         return trains;
     }
 
-    private static ArrayList<Train> generateTrains(int number) {
+    private static ArrayList<Train> generateTimetable(int number) {
         ArrayList<Train> trains = new ArrayList<>();
 
         for (int i = 0; i < number; i++) {
-            Train t = new Train(generateDestination(), UUID.randomUUID().toString(), generateNumber(23), generateNumber(59), generateNumber(80)-1, generateNumber(15), generateNumber(16), generateNumber(10));
+            Train t = new Train(generateDestination(), UUID.randomUUID().toString(), generateNumber(23), generateNumber(59), generateNumber(20)-1, generateNumber(15), generateNumber(16), generateNumber(10));
             trains.add(t);
         }
         return trains;
@@ -37,11 +37,11 @@ public class TrainsInitialiser {
 
     private static int generateNumber(int maxValue) {
         Random rand = new Random();
-        return rand.nextInt(maxValue) + 1;
+        return rand.nextInt(maxValue);
     }
 
-    public ArrayList<Train> getTrainStorage() {
-        return this.trains;
+    public ArrayList<Train> getTimetable() {
+        return trains;
     }
 
 }

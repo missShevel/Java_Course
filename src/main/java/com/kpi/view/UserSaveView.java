@@ -6,7 +6,7 @@ public class UserSaveView {
     public static boolean saveMenu() {
             Scanner scan = new Scanner(System.in);
         while(true){
-            System.out.print( "Do you want save the result y/n : ");
+            System.out.print( "Do you want to save the result y/n : ");
             String answer = scan.nextLine();
 
             switch( answer ){

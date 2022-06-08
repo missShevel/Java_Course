@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class MainView {
 
     public final String INPUT_MESSAGE = "Please, choose the option: " +
-            "\n 1 - Print trains with certain type of places" +
+            "\n 1 - Print trains with general type of seats" +
             "\n 2 - Print trains going to certain destination and deporting after certain time" +
             "\n 3 - Exit";
 
@@ -19,11 +19,9 @@ public class MainView {
     public final String FOOTER = "+----------------------------------------+-------------+--------+--------------------+--------------------+--------------------+--------------------+\n";
     public final String ENTER_DESTINATION = "Enter destination name: ";
     public final String ENTER_TIME = "Enter time in format \"HH:MM\": ";
-    public final String ENTER_PLACES_TYPE = "Enter places type: ";
 
     public final String RESULT = "Here is the list of trains";
     public final String EMPTY_RESULT = "No trains found";
-    public final String WRONG_INPUT = "Wrong input! Try again";
 
     public static void printMessage(String message) {
         System.out.println(message);
