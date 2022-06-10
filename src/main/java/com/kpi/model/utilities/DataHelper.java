@@ -12,6 +12,7 @@ import java.util.List;
 public class DataHelper {
     private String fileName = MainController.FILE_PATH + "data.ser";
     private static final Logger logger = LogManager.getLogger(DataHelper.class);
+
     public void saveData(List<Train> trains) {
        try {
            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName));

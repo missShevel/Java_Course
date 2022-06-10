@@ -15,7 +15,7 @@ public class TrainsTimetable {
 
     private static ArrayList<Train> loadTimetable() {
         ArrayList<Train> trains = new DataHelper().loadData();
-        if (trains==null || trains.isEmpty()) trains = generateTimetable(20);
+        if (trains == null || trains.isEmpty()) trains = generateTimetable(20);
         return trains;
     }
 

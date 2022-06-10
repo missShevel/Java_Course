@@ -16,19 +16,19 @@ public class Solution {
     }
 
     public ArrayList<Train> getBySeatsType()  {
-        ArrayList<Train> foundTrains = timetable.getTimetable()
+        return timetable.getTimetable()
                                .stream()
                                .filter(train -> train.getNumberOfGeneralSeats() > 0)
                                .collect(Collectors.toCollection(ArrayList::new));
-        return foundTrains;
+
     }
 
     public ArrayList<Train> getByDeparturePlaceAndAfterTime(String place, Time time) {
-        ArrayList<Train> foundTrains = timetable.getTimetable()
+        return timetable.getTimetable()
                 .stream()
                 .filter(train -> train.getDestination().equals(place) && Time.isGreater(time, train.getTime()))
                 .collect(Collectors.toCollection(ArrayList::new));
-        return foundTrains;
+
     }
 
     public TrainsTimetable getTimetable(){
