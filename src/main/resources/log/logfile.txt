@@ -1,0 +1,64 @@
+2022-06-08 09:53:58 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 09:53:58 INFO  MainController:28 - Application started.
+2022-06-08 09:55:03 INFO  MainController:42 - Application closed successfully
+2022-06-08 10:08:16 INFO  MainController:28 - Application started.
+2022-06-08 10:08:45 INFO  MainController:42 - Application closed successfully
+2022-06-08 10:09:32 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 10:09:32 INFO  MainController:28 - Application started.
+2022-06-08 10:10:41 ERROR MainController:61 - Wrong command! Try again :)
+com.kpi.model.exceptions.IncorrectInputException: Wrong command! Try again :)
+	at com.kpi.view.InputView.inputIntValueWithScanner(InputView.java:34)
+	at com.kpi.controller.MainController.run(MainController.java:39)
+	at com.kpi.Main.main(Main.java:8)
+2022-06-08 10:10:56 ERROR MainController:61 - Wrong time input format
+com.kpi.model.exceptions.WrongTimeFormatException: Wrong time input format
+	at com.kpi.model.utilities.Time24HoursValidator.validate(Time24HoursValidator.java:23)
+	at com.kpi.view.InputView.inputTime(InputView.java:53)
+	at com.kpi.controller.MainController.run(MainController.java:52)
+	at com.kpi.Main.main(Main.java:8)
+2022-06-08 10:11:07 ERROR MainController:61 - No trains found
+com.kpi.model.exceptions.EmptyResultException: No trains found
+	at com.kpi.model.utilities.ResultValidator.checkEmptyResult(ResultValidator.java:12)
+	at com.kpi.model.Solution.getByDeparturePlaceAndAfterTime(Solution.java:34)
+	at com.kpi.controller.MainController.run(MainController.java:53)
+	at com.kpi.Main.main(Main.java:8)
+2022-06-08 10:11:11 INFO  MainController:42 - Application closed successfully
+2022-06-08 10:11:46 INFO  MainController:28 - Application started.
+2022-06-08 10:12:13 INFO  MainController:42 - Application closed successfully
+2022-06-08 19:53:15 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 19:53:15 INFO  MainController:28 - Application started.
+2022-06-08 19:58:05 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 19:58:05 INFO  MainController:28 - Application started.
+2022-06-08 19:58:52 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 19:58:52 INFO  MainController:28 - Application started.
+2022-06-08 20:06:23 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 20:06:23 INFO  MainController:28 - Application started.
+2022-06-08 20:06:46 INFO  MainController:42 - Application closed successfully
+2022-06-08 20:10:26 INFO  MainController:28 - Application started.
+2022-06-08 20:10:39 ERROR MainController:68 - Wrong time input format
+com.kpi.model.exceptions.WrongTimeFormatException: Wrong time input format
+	at com.kpi.model.utilities.Time24HoursValidator.validate(Time24HoursValidator.java:23)
+	at com.kpi.view.InputView.inputTime(InputView.java:54)
+	at com.kpi.controller.MainController.run(MainController.java:56)
+	at com.kpi.Main.main(Main.java:8)
+2022-06-08 20:10:52 INFO  MainController:42 - Application closed successfully
+2022-06-08 20:13:47 INFO  MainController:28 - Application started.
+2022-06-08 20:14:02 INFO  MainController:42 - Application closed successfully
+2022-06-08 20:33:21 ERROR DataHelper:33 - saved data wasn't found, new timetable generated
+2022-06-08 20:33:21 INFO  MainController:28 - Application started.
+2022-06-08 20:33:58 INFO  MainController:42 - Application closed successfully
+2022-06-08 20:34:01 INFO  MainController:28 - Application started.
+2022-06-08 20:39:12 INFO  MainController:42 - Application closed successfully
+2022-06-08 20:47:10 INFO  MainController:28 - Application started.
+2022-06-08 21:16:14 INFO  MainController:29 - Application started.
+2022-06-08 21:16:23 INFO  MainController:42 - Application closed successfully
+2022-06-09 06:18:56 INFO  MainController:29 - Application started.
+2022-06-09 06:19:46 INFO  MainController:42 - Application closed successfully
+2022-06-09 06:20:08 INFO  MainController:29 - Application started.
+2022-06-09 06:20:49 INFO  MainController:42 - Application closed successfully
+2022-06-10 10:13:26 INFO  MainController:29 - Application started.
+2022-06-10 10:14:05 INFO  MainController:42 - Application closed successfully
+2022-06-10 11:37:26 INFO  MainController:29 - Application started.
+2022-06-10 11:37:48 INFO  MainController:42 - Application closed successfully
+2022-06-10 13:33:56 INFO  MainController:29 - Application started.
+2022-06-10 13:34:19 INFO  MainController:42 - Application closed successfully
